@@ -8,10 +8,10 @@
 - HOW MUCH ผู้ดูแลเสียเวลา 1-3 ชั่วโมง/เดือน ในการพิมพ์ทักทีละห้อง หรือปริ้นกระดาษติดบอร์ดที่ผู้เช่าอาจไม่เห็น
 
 ### Proposed Solution
-- สร้าง 
+- สร้าง ระบบแจ้งเตือนอัตโนมัติผ่าน Line OA ที่ดึงข้อมูลจาก Google Sheet ส่งข้อความแยกรายห้อง เพื่อ ลดเวลาผู้เช่า และผู้เช่าได้รับข้อมูลครบทุกคน
 
 ### n8n Worlflow Concept
 - Trigger : Webhook / Schedule
-- Process : Schedule
-- Action : เรียก API ของ Google Sheet
-- Notify : LINE 
+- Process : IF (แยกประเภท ประกาศ / ฉุกเฉิน / แจ้งหนี้) → Code Node (คำนวณค่าน้ำ ค่าไฟ) → Loop ทีละห้อง
+- Action : เรียก Google Sheets API (ดึงข้อมูลห้อง + Line ID) / Line Messaging API (ส่งข้อความ)
+- Notify : LINE OA
