@@ -12,6 +12,6 @@
 
 ### n8n Worlflow Concept
 - Trigger : Webhook / Schedule
-- Process : 
-- Action : 
-- Notify : LINE
+- Process : Schedule
+- Action : เรียก API ของ Google Sheet
+- Notify : LINE 
